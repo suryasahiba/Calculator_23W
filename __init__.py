@@ -40,5 +40,16 @@ def EXP():
     response = "exponent = " + str(exp)
     return response
 
+@app.route("/modulus", methods=["POST"])
+def MODULUS(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    modulus=a%b
+    response = "modulus = " + str(modulus)
+    return response
+
 if __name__== "__main__":
     app.run()
