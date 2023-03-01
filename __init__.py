@@ -28,6 +28,16 @@ def SUB():
     sub=a-b
     response = "Difference = " + str(sub)
     return response
+@app.route("/logicalAND", methods=["POST"])
+def LOGICALAND(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    LOGICALAND=a&b
+    response = "Logical AND is = " + str(LOGICALAND)
+    return response
 
 @app.route("/exp", methods=["POST"])
 def EXP(): 
