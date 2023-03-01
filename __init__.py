@@ -280,6 +280,16 @@ def gcd(a, b):
 def lcm(a, b):
     return (a*b) // gcd(a, b) 
 
+@app.route("/shiftdecimalright", methods=["POST"])
+def shiftdecimalright(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    new=a*((10)**(b))
+    response = "shifted decimal = " + str(new)
+    return response
 
 
 
