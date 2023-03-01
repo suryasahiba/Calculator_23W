@@ -54,6 +54,7 @@ def SUB():
 @app.route("/LOGICALAND", methods=["POST"])
 def LOGICALAND(): 
 
+<<<<<<< HEAD
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
@@ -63,6 +64,8 @@ def LOGICALAND():
     response = "Logical AND is = " + str(ans)
     return response
 
+=======
+>>>>>>> 39629fd (added exponent)
 @app.route("/exp", methods=["POST"])
 def EXP(): 
     jsonStr = request.get_json()
@@ -74,6 +77,7 @@ def EXP():
     response = "exponent = " + str(exp)
     return response
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 @app.route("/modulus", methods=["POST"])
@@ -252,5 +256,7 @@ def EXP():
 
 =======
 >>>>>>> 167b3be (left shift)
+=======
+>>>>>>> 39629fd (added exponent)
 if __name__== "__main__":
     app.run()
