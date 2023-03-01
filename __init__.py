@@ -8,6 +8,17 @@ app = Flask(__name__)
 def home():
     return render_template("InputOutput.html")        
 
+@app.route("/Find_MIN", methods=["POST"])
+def Find_MIN(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    mini=min(a,b)
+    response = "Minimum is = " + str(mini)
+    return response
+
 @app.route("/add", methods=["POST"])
 def ADD(): 
     jsonStr = request.get_json()
@@ -62,6 +73,19 @@ def EXP():
     exp=a**b
     response = "exponent = " + str(exp)
     return response
+
+
+@app.route("/modulus", methods=["POST"])
+def MODULUS(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    modulus=a%b
+    response = "modulus = " + str(modulus)
+    return response
+    
 @app.route("/log", methods=["POST"])
 def LOG(): 
     jsonStr = request.get_json()
@@ -91,6 +115,16 @@ def ISEQUAL():
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
     response = str("Equal" if (a == b) else "Not Equal")
+    return response
+    
+@app.route("/right_shift", methods=["POST"])
+def right_shift():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    right_shift=a>>b
+    response = "right_shift = " + str(right_shift)
     return response
 
 @app.route("/is_different", methods=["POST"])
@@ -142,7 +176,6 @@ def gcd():
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
-
     ans = gcd_calc(a,b)
     response = "HCF = " + str(ans)
     return response
@@ -157,6 +190,29 @@ def nRoot():
     b=int(jsonObj['N2'])
     nroot = a**(1/b)
     response = "nRoot =" + str(nroot)
+    return response
+
+@app.route("/bitwise_or", methods=["POST"])
+def BITWISEOR(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    bitwise_or=a|b
+    response = "Bitwise_Or = " + str(bitwise_or)
+    return response
+
+
+@app.route("/bitwiseNOR", methods=["POST"])
+def bitwiseNOR():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    ans = ~(a|b)
+    response = "BitwiseNOR is " + str(ans)
     return response
 
 if __name__== "__main__":
