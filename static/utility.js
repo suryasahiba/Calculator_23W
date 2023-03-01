@@ -1,4 +1,12 @@
 function submitData(targetURL) {
+	if (
+		!targetURL ||
+		typeof targetURL !== "string" ||
+		!targetURL.startsWith("http")
+	) {
+		alert("Invalid target URL");
+		return;
+	}
 	//Marshelling into JSON
 	var dataToBeSent = "{";
 	if(typeof(document.forms[0]) == 'undefined' || document.forms[0] == null){
@@ -23,6 +31,14 @@ function submitData(targetURL) {
 }
 
 function sendRequest(targetURL, jsonData){
+	if (
+		!targetURL ||
+		typeof targetURL !== "string" ||
+		!targetURL.startsWith("http")
+	) {
+		alert("Invalid target URL");
+		return;
+	}
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -37,6 +53,14 @@ function sendRequest(targetURL, jsonData){
 }
 
 function showOutput(output){		
+	if (
+		!targetURL ||
+		typeof targetURL !== "string" ||
+		!targetURL.startsWith("http")
+	) {
+		alert("Invalid target URL");
+		return;
+	}
 	var division = document.getElementById("output_div");
 	if(division === null || division == 'undefined'){			
 		division = document.createElement("div");	
