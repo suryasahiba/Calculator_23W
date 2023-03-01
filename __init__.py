@@ -80,6 +80,20 @@ def EXP():
 <<<<<<< HEAD
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+@app.route("/antilog", methods=["POST"])
+def ANTILOG(): 
+    jsonStr = request.get_json() 
+    jsonObj = json.loads(jsonStr) 
+     
+    a=int(jsonObj['N1']) 
+    b=int(jsonObj['N2']) 
+    antilog = b**a 
+    response = "antilog of "+str(a)+" with base "+str(b)+" = " + str(antilog) 
+    return response
+
+>>>>>>> e6ba31aebcbac618799190bd659e2215622f794c
 @app.route("/modulus", methods=["POST"])
 def MODULUS(): 
     jsonStr = request.get_json()
@@ -208,21 +222,113 @@ def BITWISEOR():
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
     bitwise_or=a|b
-    response = "Bitwise_Or = " + str(bitwise_or)
+    response = "bitwise_or = " + str(bitwise_or)
     return response
 
 
-@app.route("/bitwiseNOR", methods=["POST"])
-def bitwiseNOR():
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route("/LCM", methods=["POST"])
+def LCM(): 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
-    ans = ~(a|b)
-    response = "BitwiseNOR is " + str(ans)
+    lcm1=lcm(a,b)
+    response = "LCM = " + str(lcm1)
     return response
 
+<<<<<<< HEAD
 @app.route("/lcm", methods=["POST"])
 def LCM(): 
     jsonStr = request.get_json()
@@ -234,6 +340,8 @@ def LCM():
     response = "LCM = " + str(lcm1)
     return response
 
+=======
+>>>>>>> e6ba31aebcbac618799190bd659e2215622f794c
 def gcd(a, b):
     if b == 0:
         return a
@@ -243,6 +351,7 @@ def gcd(a, b):
 def lcm(a, b):
     return (a*b) // gcd(a, b) 
 
+<<<<<<< HEAD
 @app.route("/exp", methods=["POST"])
 def EXP(): 
     jsonStr = request.get_json()
@@ -258,5 +367,23 @@ def EXP():
 >>>>>>> 167b3be (left shift)
 =======
 >>>>>>> 39629fd (added exponent)
+=======
+
+
+
+# @app.route("/bitwiseNOR", methods=["POST"])
+# def bitwiseNOR():
+@app.route("/bitwisexor", methods=["POST"])
+def bitwisexor():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    bitwisexor=a^b
+    response = "Bitwise XOR = " + str(bitwisexor)
+    return response
+
+
+>>>>>>> e6ba31aebcbac618799190bd659e2215622f794c
 if __name__== "__main__":
     app.run()
