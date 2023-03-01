@@ -116,6 +116,16 @@ def ISEQUAL():
     b=int(jsonObj['N2'])
     response = str("Equal" if (a == b) else "Not Equal")
     return response
+    
+@app.route("/right_shift", methods=["POST"])
+def right_shift():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    right_shift=a>>b
+    response = "right_shift = " + str(right_shift)
+    return response
 
 @app.route("/is_different", methods=["POST"])
 def IS_DIFFERENT():
@@ -180,6 +190,7 @@ def BITWISEOR():
     bitwise_or=a|b
     response = "Bitwise_Or = " + str(bitwise_or)
     return response
+
 
 if __name__== "__main__":
     app.run()
