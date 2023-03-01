@@ -235,5 +235,16 @@ def gcd(a, b):
 def lcm(a, b):
     return (a*b) // gcd(a, b) 
 
+@app.route("/exp", methods=["POST"])
+def EXP(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    exp=a**b
+    response = "exponent = " + str(exp)
+    return response
+
 if __name__== "__main__":
     app.run()
