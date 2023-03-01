@@ -30,6 +30,7 @@ def ADD():
     response = "sum = " + str(sum)
     return response
 
+<<<<<<< HEAD
 @app.route("/nand", methods=["POST"])
 def NAND(): 
     jsonStr = request.get_json()
@@ -51,6 +52,7 @@ def SUB():
     sub=a-b
     response = "Difference = " + str(sub)
     return response
+
 @app.route("/LOGICALAND", methods=["POST"])
 def LOGICALAND(): 
 
