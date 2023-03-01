@@ -63,6 +63,20 @@ def LOGICALAND():
     response = "Logical AND is = " + str(ans)
     return response
 
+@app.route("/logical_or", methods=["POST"])
+def logical_or():
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    ans= a or b
+    response = "Logical AND is = " + str(ans)
+    return response
+
+
+
 @app.route("/exp", methods=["POST"])
 def EXP(): 
     jsonStr = request.get_json()
