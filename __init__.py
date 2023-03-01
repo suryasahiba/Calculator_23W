@@ -30,7 +30,7 @@ def ADD():
     response = "sum = " + str(sum)
     return response
 
-<<<<<<< HEAD
+
 @app.route("/nand", methods=["POST"])
 def NAND(): 
     jsonStr = request.get_json()
