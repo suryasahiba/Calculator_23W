@@ -61,6 +61,15 @@ def LOG():
     response = "log = " + str(log)
     return response
 
+@app.route("/lsd", methods=["POST"])
+def LSD():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    response = "Left Shift Decimal = " + str(a<<b)
+    return response
 
 @app.route("/isEqual", methods=["POST"])
 def ISEQUAL():
