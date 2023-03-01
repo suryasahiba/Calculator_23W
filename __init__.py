@@ -7,6 +7,17 @@ app = Flask(__name__)
 def home():
     return render_template("InputOutput.html")        
 
+@app.route("/Find_MIN", methods=["POST"])
+def Find_MIN(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    mini=min(a,b)
+    response = "Minimum is = " + str(mini)
+    return response
+
 @app.route("/add", methods=["POST"])
 def ADD(): 
     jsonStr = request.get_json()
