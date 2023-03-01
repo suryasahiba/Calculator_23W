@@ -35,13 +35,12 @@ def IS_DIFFERENT():
     jsonObj = json.loads(jsonStr)
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
-    response = f" {a} "
+    response = f" {a} and {b} "
 
     if a == b:
-        response += "Is Equal to "
+        response += "Is Not Different "
     else:
-        response += "Is Not Equal to "
-    response += f"{b}"
+        response += "Is Different "
     return response
 
 if __name__== "__main__":
