@@ -306,15 +306,16 @@ def lcm(a, b):
 
 
 
-@app.route("/bitwiseNOR", methods=["POST"])
-def bitwiseNOR():
+# @app.route("/bitwiseNOR", methods=["POST"])
+# def bitwiseNOR():
+@app.route("/bitwisexor", methods=["POST"])
+def bitwisexor():
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
-    
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
-    ans = ~(a|b)
-    response = "BitwiseNOR is " + str(ans)
+    bitwisexor=a^b
+    response = "Bitwise XOR = " + str(bitwisexor)
     return response
 
 
