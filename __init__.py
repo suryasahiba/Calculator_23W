@@ -30,7 +30,7 @@ def SUB():
     return response
 
 @app.route("/bitwise_or", methods=["POST"])
-def BitwiseOr(): 
+def BITWISEOR(): 
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
