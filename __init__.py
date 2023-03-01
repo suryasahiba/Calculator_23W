@@ -146,6 +146,18 @@ def gcd():
     ans = gcd_calc(a,b)
     response = "HCF = " + str(ans)
     return response
+    
+@app.route("/nRoot", methods=["POST"])
+def nRoot(): 
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    nroot = a**(1/b)
+    response = "nRoot =" + str(nroot)
+    return response
 
 if __name__== "__main__":
     app.run()
