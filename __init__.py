@@ -29,5 +29,15 @@ def SUB():
     response = "Difference = " + str(sub)
     return response
 
+@app.route("/lsd", methods=["POST"])
+def LSD():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    response = "Left Shift Decimal = " + str(a<<b)
+    return response
+
 if __name__== "__main__":
     app.run()
