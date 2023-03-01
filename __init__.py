@@ -72,7 +72,7 @@ def logical_or():
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
     ans= a or b
-    response = "Logical AND is = " + str(ans)
+    response = "Logical OR is = " + str(ans)
     return response
 
 
