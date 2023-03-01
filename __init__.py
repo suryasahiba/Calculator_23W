@@ -40,5 +40,17 @@ def EXP():
     response = "exponent = " + str(exp)
     return response
 
+@app.route("/antilog", methods=["POST"])
+def ANTILOG(): 
+    jsonStr = request.get_json() 
+    jsonObj = json.loads(jsonStr) 
+     
+    a=int(jsonObj['N1']) 
+    b=int(jsonObj['N2']) 
+    antilog = b**a 
+    response = "antilog of "+str(a)+" with base "+str(b)+" = " + str(antilog) 
+    return response
+
+
 if __name__== "__main__":
     app.run()
