@@ -75,6 +75,7 @@ def EXP():
     return response
 
 
+<<<<<<< HEAD
 @app.route("/modulus", methods=["POST"])
 def MODULUS(): 
     jsonStr = request.get_json()
@@ -142,6 +143,8 @@ def IS_DIFFERENT():
     return response
 
 
+=======
+>>>>>>> 167b3be (left shift)
 @app.route("/left_shift", methods=["POST"])
 def left_shift(): 
     jsonStr = request.get_json()
@@ -153,6 +156,7 @@ def left_shift():
     response = "Left Shift = " + str(left_shift)
     return response
 
+<<<<<<< HEAD
 @app.route("/maximum", methods=["POST"])
 def MAX(): 
     jsonStr = request.get_json()
@@ -246,5 +250,7 @@ def EXP():
     response = "exponent = " + str(exp)
     return response
 
+=======
+>>>>>>> 167b3be (left shift)
 if __name__== "__main__":
     app.run()
