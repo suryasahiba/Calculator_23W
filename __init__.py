@@ -30,6 +30,17 @@ def ADD():
     response = "sum = " + str(sum)
     return response
 
+@app.route("/multiplication", methods=["POST"])
+def MULTIPLICATION(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    multiplication=a*b
+    response = "multiplication = " + str(multiplication)
+    return response
+
 
 @app.route("/nand", methods=["POST"])
 def NAND(): 
