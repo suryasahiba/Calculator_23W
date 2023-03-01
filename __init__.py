@@ -194,8 +194,6 @@ def gcd():
 @app.route("/nRoot", methods=["POST"])
 def nRoot(): 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
@@ -215,18 +213,7 @@ def BITWISEOR():
     bitwise_or=a|b
     response = "bitwise_or = " + str(bitwise_or)
     return response
-=======
->>>>>>> 3c3da53 (Added)
-=======
->>>>>>> 3c3da53 (Added)
 
-
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-# @app.route("/bitwiseNOR", methods=["POST"])
-# def bitwiseNOR():
 @app.route("/bitwisexor", methods=["POST"])
 def bitwisexor():
     jsonStr = request.get_json()
@@ -248,10 +235,6 @@ def DIV():
     div=a/b
     response = "Quotient = " + str(div)
     return response
-=======
->>>>>>> 3c3da53 (Added)
-=======
->>>>>>> 3c3da53 (Added)
 
 
 
