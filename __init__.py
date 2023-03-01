@@ -29,5 +29,20 @@ def SUB():
     response = "Difference = " + str(sub)
     return response
 
+@app.route("/is_different", methods=["POST"])
+def IS_DIFFERENT():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    response = f" {a} "
+
+    if a == b:
+        response += "Is Equal to "
+    else:
+        response += "Is Not Equal to "
+    response += f"{b}"
+    return response
+
 if __name__== "__main__":
     app.run()
