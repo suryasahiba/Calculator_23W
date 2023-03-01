@@ -188,8 +188,122 @@ def BITWISEOR():
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
     bitwise_or=a|b
-    response = "Bitwise_Or = " + str(bitwise_or)
+    response = "bitwise_or = " + str(bitwise_or)
     return response
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route("/LCM", methods=["POST"])
+def LCM(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    lcm1=lcm(a,b)
+    response = "LCM = " + str(lcm1)
+    return response
+
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+def lcm(a, b):
+    return (a*b) // gcd(a, b) 
+
+
 
 
 @app.route("/bitwiseNOR", methods=["POST"])
@@ -202,6 +316,7 @@ def bitwiseNOR():
     ans = ~(a|b)
     response = "BitwiseNOR is " + str(ans)
     return response
+
 
 if __name__== "__main__":
     app.run()
