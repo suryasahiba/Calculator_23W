@@ -63,5 +63,16 @@ def LOG():
     return response
 
 
+@app.route("/bitwiseNOR", methods=["POST"])
+def bitwiseNOR():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    ans = ~(a|b)
+    response = "BitwiseNOR is " + str(ans)
+    return response
+
 if __name__== "__main__":
     app.run()
