@@ -19,6 +19,17 @@ def ADD():
     response = "sum = " + str(sum)
     return response
 
+@app.route("/nand", methods=["POST"])
+def NAND(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    nand=~(a&b)
+    response = "bitwise nand = " + str(nand)
+    return response
+
 @app.route("/sub", methods=["POST"])
 def SUB(): 
     jsonStr = request.get_json()
@@ -96,6 +107,17 @@ def left_shift():
     b=int(jsonObj['N2'])
     left_shift=a<<b
     response = "Left Shift = " + str(left_shift)
+    return response
+
+@app.route("/maximum", methods=["POST"])
+def MAX(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    maximum=max(a,b)
+    response = "Maximum = " + str(maximum)
     return response
 
 if __name__== "__main__":
