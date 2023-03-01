@@ -41,5 +41,17 @@ def LOG():
     return response
 
 
+
+@app.route("/left_shift", methods=["POST"])
+def left_shift(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    left_shift=a<<b
+    response = "Left Shift = " + str(left_shift)
+    return response
+
 if __name__== "__main__":
     app.run()
