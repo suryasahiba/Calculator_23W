@@ -74,6 +74,18 @@ def EXP():
     response = "exponent = " + str(exp)
     return response
 
+
+@app.route("/modulus", methods=["POST"])
+def MODULUS(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    modulus=a%b
+    response = "modulus = " + str(modulus)
+    return response
+    
 @app.route("/log", methods=["POST"])
 def LOG(): 
     jsonStr = request.get_json()
@@ -158,6 +170,68 @@ def gcd():
     response = "HCF = " + str(ans)
     return response
 
+
+
+@app.route("/bitwise_or", methods=["POST"])
+def BITWISEOR(): 
+
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+
+
+    bitwise_or=a|b
+    response = "Bitwise_Or = " + str(bitwise_or)
+    return response
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @app.route("/lcm", methods=["POST"])
 def LCM(): 
     jsonStr = request.get_json()
@@ -168,7 +242,6 @@ def LCM():
     lcm1=lcm(a,b)
     response = "LCM = " + str(lcm1)
     return response
-
 def gcd(a, b):
     if b == 0:
         return a
