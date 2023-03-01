@@ -29,5 +29,16 @@ def SUB():
     response = "Difference = " + str(sub)
     return response
 
+@app.route("/bitwise_or", methods=["POST"])
+def BitwiseOr(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    bitwise_or=a|b
+    response = "Bitwise_Or = " + str(bitwise_or)
+    return response
+
 if __name__== "__main__":
     app.run()
