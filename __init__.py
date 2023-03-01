@@ -115,5 +115,22 @@ def MAX():
     response = "Maximum = " + str(maximum)
     return response
 
+def gcd_calc(a,b):
+    if b==0:
+        return a
+    return gcd_calc(b,a%b)
+
+@app.route("/gcd", methods=["POST"])
+def gcd():
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+
+    ans = gcd_calc(a,b)
+    response = "HCF = " + str(ans)
+    return response
+
 if __name__== "__main__":
     app.run()
