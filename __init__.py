@@ -168,6 +168,15 @@ def BITWISEOR():
     bitwise_or=a|b
     response = "Bitwise_Or = " + str(bitwise_or)
     return response
-
+@app.route("/bitwisexor", methods=["POST"])
+def bitwisexor(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    bitwisexor=a^b
+    response = "Bitwise XOR = " + str(bitwisexor)
+    return response
 if __name__== "__main__":
     app.run()
