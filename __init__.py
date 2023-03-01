@@ -52,13 +52,21 @@ def LOGICALAND():
     return response
 
 @app.route("/exp", methods=["POST"])
-def EXP(): 
+def EXP():
     jsonStr = request.get_json()
     jsonObj = json.loads(jsonStr)
     
     a=int(jsonObj['N1'])
     b=int(jsonObj['N2'])
-    exp=a**b
+    if b == 0:
+        exp = 1
+    else:
+        cnt = 1
+        sto = a
+        while cnt < b:
+            a *= sto
+            cnt+=1
+        exp = a
     response = "exponent = " + str(exp)
     return response
 @app.route("/log", methods=["POST"])
