@@ -29,5 +29,16 @@ def SUB():
     response = "Difference = " + str(sub)
     return response
 
+@app.route("/maximum", methods=["POST"])
+def MAX(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    
+    a=int(jsonObj['N1'])
+    b=int(jsonObj['N2'])
+    maximum=max(a,b)
+    response = "Maximum = " + str(maximum)
+    return response
+
 if __name__== "__main__":
     app.run()
