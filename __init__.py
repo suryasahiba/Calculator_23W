@@ -38,6 +38,8 @@ def BITWISEOR():
     b=int(jsonObj['N2'])
     bitwise_or=a|b
     response = "Bitwise_Or = " + str(bitwise_or)
+    return response
+
 @app.route("/isEqual", methods=["POST"])
 def ISEQUAL():
     jsonStr = request.get_json()
